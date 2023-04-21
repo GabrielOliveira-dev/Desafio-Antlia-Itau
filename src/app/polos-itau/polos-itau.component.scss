@@ -1,0 +1,50 @@
+
+
+.container {
+    max-width: 85%;
+    margin: 0 auto;
+}
+
+.top-table {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+
+.top-table .text-polo .text-title {
+    letter-spacing: 1.5px;
+    font-weight: 800;
+    font-size: 28px;
+}
+
+.top-table .text-polo .text-desc {
+    padding-top: 5px;
+    font-weight: lighter;
+    font-size: 20px;
+    letter-spacing: 1.5px;
+
+}
+
+.search-polo mat-form-field  {
+    width: 380px;
+}
+
+
+table {
+    width: 100%;
+}
+
+.width-table {
+    width: 30%;
+}
+
+.centered{
+    text-align: center;
+}
+
+.input-field {
+    font-size: 12px;
+    margin-top: 20px;
+}

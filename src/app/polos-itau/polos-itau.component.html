@@ -1,0 +1,69 @@
+<div class="container">
+    <div class="top-table">
+        <div class="text-polo">
+            <h1 class="text-title">Polos Itaú</h1>
+            <p class="text-desc">confira abaixo alguns dos principais polos do itaú</p>
+        </div>
+        <div class="search-polo">
+            <form>
+                <mat-form-field  class="input-field" appearance="outline">
+                  <mat-label>Pesquisar...</mat-label>
+                  <input class="input-search" matInput [formControl]='campoPesquisar' >
+                </mat-form-field>
+            </form>
+        </div>
+    </div>
+    
+    <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource">
+
+            <ng-container matColumnDef="name">
+                <th class="width-table" mat-header-cell *matHeaderCellDef>Nome </th>
+                <td mat-cell *matCellDef="let polo"><b>{{ polo.name }}</b></td>
+            </ng-container>
+            
+            <ng-container matColumnDef="business">
+                <th class="width-table" mat-header-cell *matHeaderCellDef> Business </th>
+                <td mat-cell *matCellDef="let polo"> {{ polo.business }} </td>
+            </ng-container>
+            
+            <ng-container matColumnDef="valuation">
+                <th mat-header-cell *matHeaderCellDef> Valuation </th>
+                <td mat-cell *matCellDef="let polo"  > {{ polo.valuation | currency: 'BRL'}} </td>
+            </ng-container>
+            
+            <ng-container matColumnDef="active">
+                <th class="centered" mat-header-cell *matHeaderCellDef> Situação </th>
+                <td class="centered" mat-cell *matCellDef="let polo" 
+                ><span class="material-icons" style="font-size: 20px;"
+                [ngStyle]="{'color': polo.active === true ? 'rgba(108,246,113,255)' : 'rgba(255,117,115,255)' }">circle</span></td>
+            </ng-container>
+    
+            <ng-container matColumnDef="id">
+                <th class="centered" mat-header-cell *matHeaderCellDef> Ação </th>
+                <td class="centered" mat-cell *matCellDef="let polo">
+                    <!-- fazer a mudança de pagina seguindo o id possivelmente com navigate -->
+                    <a [routerLink]="['/polo_detalhe/' + polo.id]">
+                        <mat-icon class="material-icons-outlined" style="-webkit-text-stroke-width: 0px; color: rgb(128, 128, 128);"
+                        >remove_red_eye
+                        </mat-icon>
+                    </a>
+                    
+                </td>
+                
+            </ng-container>
+            
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    
+        <mat-paginator [pageSizeOptions]="[5, 10, 15]"
+                        aria-label="Selecione a pagina">
+        </mat-paginator>
+    </div>
+    
+</div>
+
+
+  
+  

@@ -1,0 +1,76 @@
+<div class="container">
+    <ng-container *ngIf="(poloData$ | async) as poloData">
+        <div class="polo-detail">
+            <h1 class="polo-name">Polo {{ poloData.name }}</h1>
+            <p class="polo-desc">exibindo detalhes do polo {{ poloData.name }}#{{ poloData.id }}</p>
+        </div>
+        
+        
+        <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+        
+            <div class="container-address">
+                <p class="text-detail-address">Detalhes do Endereço</p>
+                <div class="detail-address">
+                    <app-cep [control]="$any(formulario).controls['cep']" (cepResponse)="cepResponse($event)"></app-cep>
+        
+                    <mat-form-field class="example-full-width" appearance="outline">
+                        <input matInput formControlName="rua" placeholder="Nome da Rua">
+                    </mat-form-field>
+            
+                    <mat-form-field class="example-full-width" appearance="outline">
+                        <input matInput formControlName="bairro" placeholder="Bairro">
+                    </mat-form-field>
+            
+                    <mat-form-field class="example-full-width" appearance="outline">
+                        <input matInput formControlName="estado" placeholder="Estado">
+                    </mat-form-field>
+            
+                    <mat-form-field class="example-full-width" appearance="outline">
+                        <input matInput formControlName="cidade" placeholder="Cidade">
+                    </mat-form-field>
+                </div>
+                
+            </div>
+            <div class="container-company">
+                <p class="text-detail-company">Detalhes da Empresa</p>
+                <div class="detail-company">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Nome</mat-label>
+                        <input matInput formControlName="nome" >
+                    </mat-form-field>
+            
+                    <mat-form-field appearance="outline">
+                        <mat-label>Business</mat-label>
+                        <input matInput formControlName="business">
+                    </mat-form-field>
+            
+                    <mat-form-field appearance="outline">
+                        <mat-label>Valuation</mat-label>
+                        <input matInput formControlName="valuation"
+                             currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',', align: 'left'}">
+                    </mat-form-field>
+            
+                    <mat-form-field appearance="outline">
+                        <mat-label>CNPJ</mat-label>
+                        <input matInput formControlName="cnpj" mask="CPF_CNPJ">
+                    </mat-form-field>
+            
+                    <mat-form-field appearance="outline">
+                        <mat-label>Ativo?</mat-label>
+                        <mat-select [formControlName]="'active'">
+                            <mat-option  [value]="true">Sim</mat-option>
+                            <mat-option  [value]="false">Não</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>           
+            <div class="buttons">
+                <button class="btn-back" mat-button [routerLink]="['/polos_itau']">Voltar</button>
+                <button class="btn-save" mat-button color="primary" type="submit">Salvar</button>
+            </div>
+
+        </form>
+        
+    </ng-container>
+    
+</div>

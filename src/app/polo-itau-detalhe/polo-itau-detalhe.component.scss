@@ -1,0 +1,83 @@
+$btn-back-color: rgba(152,152,152,255);
+$btn-save-color: rgba(250,131,65,255);
+$btn-font-size: 18px;
+
+.container {
+    max-width: 85%;
+    margin: 0 auto;
+}
+
+.container .polo-detail {
+    margin-top: 50px;
+    margin-bottom: 70px;
+}
+
+.container .polo-detail .polo-name {
+    letter-spacing: 1.5px;
+    font-weight: 800;
+    font-size: 28px;
+}
+
+.container .polo-detail .polo-desc {
+    padding-top: 5px;
+    font-weight: lighter;
+    font-size: 20px;
+    letter-spacing: 1.5px;
+
+}
+
+.container-address {
+    margin-bottom: 40px;
+}
+
+.text-detail-address {
+    margin-bottom: 20px;
+    font-weight: 400;
+    font-size: 15px;
+}
+
+.detail-address {
+    display: grid;
+    grid-template-columns: 1fr 5fr repeat(3, 2fr);
+    gap: 20px;
+    width: 100%;
+}
+
+.container-company {
+    margin-bottom: 40px;
+}
+
+.text-detail-company {
+    margin: 20px 0 20px 0;
+    font-weight: 400;
+    font-size: 15px;
+}
+
+.detail-company {
+    display: grid;
+    width: 75%;
+    grid-template-columns: 2fr 3fr 3fr 3fr 2fr;
+    gap: 20px;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+.buttons .btn-back {
+    width: 80px;
+    background-color: $btn-back-color;
+    color: white;
+    margin-right: 20px;
+    height: 45px;
+    font-size: $btn-font-size;
+
+}
+
+.buttons .btn-save{
+    width: 140px;
+    background-color: $btn-save-color;
+    color: white;
+    height: 45px;
+    font-size: $btn-font-size;
+}
