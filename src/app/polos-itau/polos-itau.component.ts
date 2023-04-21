@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
-import { debounceTime, distinctUntilChanged, filter, map, Observable, tap } from 'rxjs';
+import { debounceTime, distinctUntilChanged, tap, Observable } from 'rxjs';
 import { IBusiness } from './models/IBusiness';
 import { PolosItauService } from './polos-itau.service';
 
@@ -36,7 +36,7 @@ export class PolosItauComponent implements OnInit {
       .pipe(
         debounceTime(1000),
         distinctUntilChanged(),
-        map(value => this.applyFilter(value)),
+        tap(value => this.applyFilter(value)),
       ).subscribe()
     });
   }
