@@ -1,29 +1,29 @@
 <div class="container">
-    <div class="top-table">
-        <div class="text-polo">
-            <h1 class="text-title">Polos Itaú</h1>
-            <p class="text-desc">confira abaixo alguns dos principais polos do itaú</p>
+    <div class="header">
+        <div class="header__polo">
+            <h1 class="header__polo--title">Polos Itaú</h1>
+            <p class="header__polo--desc">confira abaixo alguns dos principais polos do itaú</p>
         </div>
-        <div class="search-polo">
+
+        <div class="header__search">
             <form>
-                <mat-form-field  class="input-field" appearance="outline">
+                <mat-form-field class="header__search--field" appearance="outline">
                   <mat-label>Pesquisar...</mat-label>
-                  <input class="input-search" matInput [formControl]='campoPesquisar' >
+                  <input matInput [formControl]='campoPesquisar' >
                 </mat-form-field>
             </form>
         </div>
     </div>
     
     <div class="mat-elevation-z8">
-        <table mat-table [dataSource]="dataSource">
-
+        <table class="table" mat-table [dataSource]="dataSource">
             <ng-container matColumnDef="name">
-                <th class="width-table" mat-header-cell *matHeaderCellDef>Nome </th>
+                <th class="table__th--width" mat-header-cell *matHeaderCellDef>Nome </th>
                 <td mat-cell *matCellDef="let polo"><b>{{ polo.name }}</b></td>
             </ng-container>
             
             <ng-container matColumnDef="business">
-                <th class="width-table" mat-header-cell *matHeaderCellDef> Business </th>
+                <th class="table__th--width" mat-header-cell *matHeaderCellDef> Business </th>
                 <td mat-cell *matCellDef="let polo"> {{ polo.business }} </td>
             </ng-container>
             
@@ -33,8 +33,8 @@
             </ng-container>
             
             <ng-container matColumnDef="active">
-                <th class="centered" mat-header-cell *matHeaderCellDef> Situação </th>
-                <td class="centered" mat-cell *matCellDef="let polo" 
+                <th class="table__th-td--center" mat-header-cell *matHeaderCellDef> Situação </th>
+                <td class="table__th-td--center" mat-cell *matCellDef="let polo" 
                 ><span class="material-icons" style="font-size: 20px;"
                 [ngStyle]="{'color': polo.active === true ? 'rgba(108,246,113,255)' : 'rgba(255,117,115,255)' }">circle</span></td>
             </ng-container>

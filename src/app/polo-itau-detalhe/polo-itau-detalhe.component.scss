@@ -1,70 +1,72 @@
 $btn-back-color: rgba(152,152,152,255);
 $btn-save-color: rgba(250,131,65,255);
 $btn-font-size: 18px;
+$margin-bottom-default: 40px;
+$letter-spacing-default: 1.5px;
 
 .container {
     max-width: 85%;
     margin: 0 auto;
 }
 
-.container .polo-detail {
-    margin-top: 50px;
+.polo__detail {
+    margin-top: 58px;
     margin-bottom: 70px;
 }
 
-.container .polo-detail .polo-name {
-    letter-spacing: 1.5px;
+.polo__detail--name {
+    letter-spacing: $letter-spacing-default;
     font-weight: 800;
     font-size: 28px;
 }
 
-.container .polo-detail .polo-desc {
+.polo__detail--desc {
     padding-top: 5px;
     font-weight: lighter;
     font-size: 20px;
-    letter-spacing: 1.5px;
+    letter-spacing: $letter-spacing-default;
 
 }
 
-.container-address {
-    margin-bottom: 40px;
+.address {
+    margin-bottom: $margin-bottom-default;
 }
 
-.text-detail-address {
+.address__text {
     margin-bottom: 20px;
     font-weight: 400;
     font-size: 15px;
 }
 
-.detail-address {
+.address__detail {
     display: grid;
     grid-template-columns: 1fr 5fr repeat(3, 2fr);
     gap: 20px;
     width: 100%;
 }
 
-.container-company {
-    margin-bottom: 40px;
+.company {
+    margin-bottom: $margin-bottom-default;
 }
 
-.text-detail-company {
+.company__text {
     margin: 20px 0 20px 0;
     font-weight: 400;
     font-size: 15px;
 }
 
-.detail-company {
+.company__detail {
     display: grid;
     width: 75%;
     grid-template-columns: 2fr 3fr 3fr 3fr 2fr;
     gap: 20px;
 }
 
-.buttons {
+.button {
     margin-top: 20px;
 }
 
-.buttons .btn-back {
+.button--back {
     width: 80px;
     background-color: $btn-back-color;
     color: white;
@@ -74,7 +76,7 @@ $btn-font-size: 18px;
 
 }
 
-.buttons .btn-save{
+.button--save{
     width: 140px;
     background-color: $btn-save-color;
     color: white;

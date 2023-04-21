@@ -1,11 +1,11 @@
-
+$letter-spacing-default: 1.5px;
 
 .container {
     max-width: 85%;
     margin: 0 auto;
 }
 
-.top-table {
+.header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -13,38 +13,37 @@
     margin-bottom: 10px;
 }
 
-.top-table .text-polo .text-title {
-    letter-spacing: 1.5px;
+.header__polo--title {
+    letter-spacing: $letter-spacing-default;
     font-weight: 800;
     font-size: 28px;
 }
 
-.top-table .text-polo .text-desc {
+.header__polo--desc {
     padding-top: 5px;
     font-weight: lighter;
     font-size: 20px;
-    letter-spacing: 1.5px;
+    letter-spacing: $letter-spacing-default;
 
 }
 
-.search-polo mat-form-field  {
-    width: 380px;
+.header__search--field {
+    font-size: 12px;
+    margin-top: 20px;
+    width: 380px
 }
 
 
-table {
+.table {
     width: 100%;
 }
 
-.width-table {
+.table__th--width {
     width: 30%;
 }
 
-.centered{
+.table__th-td--center{
     text-align: center;
 }
 
-.input-field {
-    font-size: 12px;
-    margin-top: 20px;
-}
+

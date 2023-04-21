@@ -1,11 +1,21 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app.routing.module';
+import { HeaderComponent } from './header/header.component';
+import { PoloItauDetalheComponent } from './polo-itau-detalhe/polo-itau-detalhe.component';
+import { MatIconModule } from '@angular/material/icon';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
+        HeaderComponent,
+        PoloItauDetalheComponent,
+      ],
+      imports: [
+        AppRoutingModule,
+        MatIconModule,
       ],
     }).compileComponents();
   });
@@ -20,12 +30,5 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app.title).toEqual('desafio-antlia');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('desafio-antlia app is running!');
   });
 });

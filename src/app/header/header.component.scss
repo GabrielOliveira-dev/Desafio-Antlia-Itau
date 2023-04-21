@@ -4,13 +4,13 @@ $line-divisor: rgba(255,164,106,255);
 $letter-color: #505050;
 
 
-.header-container {
+.header {
     background-color: $header-background;
     border-bottom: 3px solid $line-divisor;
 
 }
 
-.container {
+.header__container {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -18,12 +18,12 @@ $letter-color: #505050;
     margin: 0 auto;
 }
 
-.logo-container {
+.logo {
     padding-left: 20px;
     width: 115px;
 }
 
-.logo-itau {
+.logo__itau {
     max-width:  100%;
     margin: 30px 0 30px 0;
 
@@ -36,14 +36,14 @@ $letter-color: #505050;
     overflow: hidden;
 }
 
-.translate-field {
+.translate {
     display: grid;
     place-self: center;
     justify-self: end;
     padding-right: 20px;
 }
 
-.translate-button {
+.translate__button {
     padding: 10px;
     font-size: 16px;
     background-color: transparent;
@@ -58,7 +58,7 @@ $letter-color: #505050;
     }
 }
 
-.user-field {
+.user {
     border-left: 1px solid $letter-color;
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -66,7 +66,7 @@ $letter-color: #505050;
     padding-left: 20px;
 }
 
-.user-avatar {
+.user__avatar {
     background-color: rgb(96, 96, 96);
     border-radius: 25px;
     width: 45px;
@@ -76,7 +76,7 @@ $letter-color: #505050;
     justify-self: center;
 }
 
-.user-info{
+.user__info{
     display: grid;
     align-self: center;
     justify-self: end;
@@ -85,13 +85,13 @@ $letter-color: #505050;
     
 }
 
-.user-info .user-info-desc .name {
+.user__info--name {
     font-weight: 600;
     font-size: 15px;
     margin-bottom: 3px;
 }
 
-.user-info .user-info-desc .desc {
+.user__info--desc {
     font-weight: 100;
     font-size: 14px;
     opacity: 0.9;
@@ -99,7 +99,7 @@ $letter-color: #505050;
 
 }
 
-.user-info .user-info-arrow .arrow-icon {
+.user__info--arrow-icon {
     display: grid;
     justify-content: end;
     margin-top: 7px;
